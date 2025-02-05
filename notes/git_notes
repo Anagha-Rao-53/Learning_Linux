@@ -1,0 +1,28 @@
+Version control (Git) Notes
+
+if your file structure looks like:
+(root)
+	-foo
+		-bar.txt with hello world in it
+then root and foo are called trees, the directories are called trees, and the files are called blobs
+
+History - Linear sequence of snapshots. 
+Git uses a directed acyclic graph to get the snapshots, instead of a linear sequence
+
+so the newest state your project is in points back to the state your project was previously in
+
+so if there are two seperate changes from one history, you can "merge" both changes
+
+so there's potential for errors when you merge two of changes togethere, and if git notices something like this, git reports an error - "merge conflict"
+
+type blob  = array <byte>
+type tree = map <string, tree | blob >
+type Commit = struct {
+	parents array<commits>
+	}
+	author, message - strings
+	snapshots - tree
+
+All the references - the history is immutable - you cant change anything about it
+
+
